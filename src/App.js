@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Grid, Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
+import cover from './cover.jpg';
 
 class App extends Component {
   render() {
@@ -19,12 +21,33 @@ class App extends Component {
 class Home extends Component {
   render() {
     return (
-      <div>
-        <h1>儲ける方法</h1>
-        <h2>何もせずに月300万円稼ぐ方法があります。</h2>
-        <p>そんな夢のような方法を教えます。あなたも億万長者になりましょう。</p>
-        <Link to="/done">もっと詳しく</Link>
-      </div>
+      <Grid container justify="center">
+        <Card style={{
+          maxWidth: 700
+        }}>
+          <CardMedia
+            image={cover}
+            style={{height: 200}}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="headline" component="h1">
+              儲ける方法
+            </Typography>
+            <Typography component="p">
+              何もせずに月300万円稼ぐ方法があります。
+              そんな夢のような方法を教えます。
+              あなたも億万長者になりましょう。
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Link to="/done">
+              <Button size="small" color="primary">
+                もっと詳しく
+              </Button>
+            </Link>
+          </CardActions>
+        </Card>
+      </Grid>
     );
   }
 }
