@@ -20,8 +20,10 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h2>Home</h2>
-        <Link to="/done">Done</Link>
+        <h1>儲ける方法</h1>
+        <h2>何もせずに月300万円稼ぐ方法があります。</h2>
+        <p>そんな夢のような方法を教えます。あなたも億万長者になりましょう。</p>
+        <Link to="/done">もっと詳しく</Link>
       </div>
     );
   }
