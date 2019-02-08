@@ -3,9 +3,7 @@ class HelloWorld extends React.Component {
     return (
       <section className="section">
         <div className="container">
-          <h1 className="title">
-            Hello World
-          </h1>
+          <h1 className="title">Hello World</h1>
           <p className="subtitle">
             My first website with <strong>Bulma</strong>!
           </p>
@@ -21,7 +19,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <App />,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));
