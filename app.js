@@ -14,6 +14,11 @@ class HelloWorld extends React.Component {
 }
 
 class Top extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { name: "" };
+  }
+
   render() {
     return (
       <section
@@ -30,7 +35,27 @@ class Top extends React.Component {
             <p className="is-size-3">
               そんな夢のような方法を教えます。あなたも億万長者になりましょう。
             </p>
-            <button className="button is-primary is-large">もっと詳しく</button>
+            <div className="field">
+              <div className="control">
+                <input
+                  className="input is-medium"
+                  type="text"
+                  value={this.state.name}
+                  onChange={e => {
+                    this.setState({ name: e.target.value });
+                  }}
+                  placeholder="お名前"
+                />
+              </div>
+            </div>
+            <button
+              className="button is-primary is-large"
+              onClick={() => {
+                location.href = `invoice.html#${this.state.name}`;
+              }}
+            >
+              もっと詳しく
+            </button>
           </div>
         </div>
       </section>
