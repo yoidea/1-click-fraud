@@ -25,9 +25,9 @@ class Top extends React.Component {
       >
         <div className="hero-body">
           <div className="container">
-            <h1 className="title">儲ける方法</h1>
-            <p className="subtitle">何もせずに月300万円稼ぐ方法があります。</p>
-            <p>
+            <h1 className="title is-1r">儲ける方法</h1>
+            <p className="is-size-3">何もせずに月300万円稼ぐ方法があります。</p>
+            <p className="is-size-3">
               そんな夢のような方法を教えます。あなたも億万長者になりましょう。
             </p>
             <button className="button is-primary is-large">もっと詳しく</button>
