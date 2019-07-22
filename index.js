@@ -106,6 +106,8 @@ class Top extends React.Component {
             <button
               className="button is-primary is-large"
               onClick={() => {
+                const se = new Audio("sounds/shutter.wav");
+                se.play();
                 this.setState({ shown: true });
                 setTimeout(() => {
                   this.setState({ message: "写真を送信中..." });
