@@ -67,6 +67,14 @@ class Invoice extends React.Component {
 }
 
 class Top extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: "写真を撮影しました",
+      shown: false
+    };
+  }
+
   render() {
     return (
       <section
@@ -78,14 +86,46 @@ class Top extends React.Component {
       >
         <div className="hero-body">
           <div className="container">
+            <div
+              className="notification"
+              style={{
+                display: this.state.shown ? "" : "none"
+              }}
+            >
+              <progress
+                className="progress is-small is-primary"
+                max="100"
+              ></progress>
+              <p>{this.state.message}</p>
+            </div>
             <h1 className="title is-1">儲ける方法</h1>
             <p className="is-size-3">何もせずに月300万円稼ぐ方法があります。</p>
             <p className="is-size-3">
               そんな夢のような方法を教えます。あなたも億万長者になりましょう。
             </p>
-            <Link className="button is-primary is-large" to="invoice">
+            <button
+              className="button is-primary is-large"
+              onClick={() => {
+                this.setState({ shown: true });
+                setTimeout(() => {
+                  this.setState({ message: "写真を送信中..." });
+                }, 800);
+                setTimeout(() => {
+                  this.setState({ message: "IPアドレス取得中..." });
+                }, 1600);
+                setTimeout(() => {
+                  this.setState({ message: "IPアドレスから住所特定中..." });
+                }, 2400);
+                setTimeout(() => {
+                  this.setState({ message: "情報送信中..." });
+                }, 3200);
+                setTimeout(() => {
+                  this.props.history.push("/invoice");
+                }, 4000);
+              }}
+            >
               もっと詳しく
-            </Link>
+            </button>
           </div>
         </div>
       </section>
