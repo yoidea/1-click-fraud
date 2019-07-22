@@ -1,10 +1,26 @@
 const { HashRouter, Route, Link } = window.ReactRouterDOM;
 
 class Invoice extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      color: "red",
+      count: 3 * 24 * 60 * 60
+    };
+    setInterval(() => {
+      this.setState({ count: this.state.count - 1 });
+      if (this.state.color === "red") {
+        this.setState({ color: "black" });
+      } else {
+        this.setState({ color: "red" });
+      }
+    }, 1000);
+  }
+
   render() {
     return (
       <div>
-        <section className="hero is-medium is-primary is-bold">
+        <section className="hero is-warning">
           <div className="hero-body">
             <div className="container">
               <h1 className="title is-1">登録完了</h1>
@@ -20,6 +36,16 @@ class Invoice extends React.Component {
                 <span className="has-text-weight-bold">法的処置</span>
                 をとらせていただきますのでご注意下さい。
               </p>
+              <div
+                className="notification is-danger"
+                style={{
+                  background: this.state.color
+                }}
+              >
+                <p className="is-size-2 has-text-centered">
+                  残り{this.state.count}秒
+                </p>
+              </div>
             </div>
           </div>
         </section>
