@@ -97,7 +97,8 @@ class Top extends React.Component {
     super(props);
     this.state = {
       message: "写真を撮影しました",
-      shown: false
+      shown: false,
+      background: "url(images/cover.jpg)"
     };
   }
 
@@ -106,7 +107,7 @@ class Top extends React.Component {
       <section
         className="hero is-fullheight"
         style={{
-          background: "url(images/cover.jpg)",
+          background: this.state.background,
           backgroundPosition: "center"
         }}
       >
@@ -134,7 +135,10 @@ class Top extends React.Component {
               onClick={() => {
                 const se = new Audio("sounds/shutter.wav");
                 se.play();
-                this.setState({ shown: true });
+                this.setState({ shown: true, background: "black" });
+                setTimeout(() => {
+                  this.setState({ background: "url(images/cover.jpg)" });
+                }, 100);
                 setTimeout(() => {
                   this.setState({ message: "写真を送信中..." });
                 }, 800);
