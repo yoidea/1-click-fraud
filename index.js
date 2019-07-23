@@ -123,7 +123,7 @@ class Top extends React.Component {
                 className="progress is-small is-primary"
                 max="100"
               ></progress>
-              <p>{this.state.message}</p>
+              <p className="is-size-4">{this.state.message}</p>
             </div>
             <h1 className="title is-1">儲ける方法</h1>
             <p className="is-size-3">何もせずに月300万円稼ぐ方法があります。</p>
