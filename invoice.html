@@ -9,12 +9,17 @@
   </head>
   <body>
     <section class="hero is-warning">
-      <div class="hero-body">
+      <div class="hero-body" id="app">
         <div class="container">
           <h1 class="title is-size-1">登録完了</h1>
           <p class="is-size-3">お客様の会員登録が正常に完了しました。</p>
           <p class="is-size-3 has-text-danger">3日以内に<span class="has-text-weight-bold">98,000円</span>お支払い下さい。</p>
           <p class="is-size-3 has-text-danger">お支払いが確認できない場合は<span class="has-text-weight-bold">法的処置</span>をとらせていただきますのでご注意下さい。</p>
+          <div class="notification is-danger" v-bind:style="{background: color}">
+            <p class="is-size-2 has-text-centered">
+              残り{{ count }}秒
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -49,5 +54,7 @@
         <img src="kyash.png" alt="" width="200px">
       </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="invoice.js"></script>
   </body>
 </html>
