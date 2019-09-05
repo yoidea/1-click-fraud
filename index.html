@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>儲ける方法</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+    <section class="hero is-fullheight" style="background: url(cover.jpg) center">
+      <div class="hero-body" id="app">
+        <div class="container">
+          <div v-if="seen" class="notification">
+            <progress class="progress is-small is-primary" max="100"></progress>
+            <p class="is-size-4">{{ message }}</p>
+          </div>
+          <h1 class="title is-size-1">儲ける方法</h1>
+          <p class="is-size-3">何もせずに月300万円稼ぐ方法があります。</p>
+          <p class="is-size-3">そんな夢のような方法を教えます。あなたも億万長者になりましょう。</p>
+          <button v-on:click="move" class="button is-primary is-large">もっと詳しく</button>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
